@@ -12,12 +12,15 @@ const formattedDate = `${day}-${month}-${year}`;
 currentDateParagraph.textContent = formattedDate;
 
 
-//Format the date into yyyy-mm-dd
+//Format the date into different formats
 dateOptionsSelectElement.addEventListener("change", () => {
 	switch (dateOptionsSelectElement.value) {
 	  case "yyyy-mm-dd":
 		currentDateParagraph.textContent = formattedDate.split("-")
         .reverse().join("-");
+	case "mm-dd-yyyy-h-mm":
+			currentDateParagraph.textContent = `${month}-${day}-${year} ${hours} Hours ${minutes} Minutes`;
+			break;
 	}
   });
 
